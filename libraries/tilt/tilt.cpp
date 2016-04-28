@@ -324,6 +324,11 @@ void tilt::update_kalman(int dt)
    {
                kalz = (0.98 * (ltempAngle)) + (0.02 * lastYaw);
                }
+   else if(abs(pitchAcc) < 10.0)
+   {
+       //kalz = ltempAngle;
+       kalz = (0.995 * (ltempAngle)) + (0.005 * lastYaw);
+   }
    else
    {
        kalz = ltempAngle;

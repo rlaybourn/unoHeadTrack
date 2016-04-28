@@ -136,14 +136,14 @@ dataForController_t getControllerData(void){
   //{
     controllerData.leftStickX = (unsigned int) constrain(    (((tilt1.get_yaws())*4) + 128),0,254);
   //}
-  if(abs((tilt1.get_pitch() - pitchOff)) < 2.0)
-  {
-    controllerData.leftStickY = (int)constrain((((tilt1.get_pitch() - pitchOff)* abs((tilt1.get_pitch()- pitchOff)*4)) +128.0),0,254);;//analogRead(A1) >> 2;
-  }
-  else
-  {
+//  if(abs((tilt1.get_pitch() - pitchOff)) < 2.0)
+//  {
+//    controllerData.leftStickY = (int)constrain((((tilt1.get_pitch() - pitchOff)* abs((tilt1.get_pitch()- pitchOff)*4)) +128.0),0,254);;//analogRead(A1) >> 2;
+//  }
+//  else
+//  {
     controllerData.leftStickY = (int)constrain((((tilt1.get_pitch() - pitchOff)*8)+128.0),0,254);//analogRead(A1) >> 2;;
-  }
+//  }
   controllerData.rightStickX = 128; //analogRead(A2) >> 2;
   controllerData.rightStickY = 128;//analogRead(A3) >> 2;
   // And return the data!
